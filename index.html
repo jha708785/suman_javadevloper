@@ -1223,57 +1223,47 @@
             link.click();
             link.remove();
         }
-	    function sendEmail()
-		    {
-			    var name=${#Name};
-			    var email=${#Email};
-			    var subject=${#Subject};
-			    var message=${#Message};
-			    var Body="Name"+name+"</br>"Email"+email+"</br>Subject"+subject+"</br>Message+message;
-		    }
-
-	   function sendEmail() {
+	     function sendEmail() {
             var name = $("#Name").val();
             var email = $("#Email").val();
             var subject = $("#Subject").val();
             var message = $("#Message").val();
-            var Body = name + email + subject + message;
+            var Body = 'Name' + name + '</br>Email' + email + '</br>Subject' + subject + '</br>Message' + message;
             console.log(name + email + subject + message);
+        }
 
-
-            Email.send({
-                Host: "smtp.email.com",
-                Username: "jha708785@gmail.com",
-                Password: "suman1234",
-                To: 'jha708785@gmail.com',
-                From: "jha708785@gmail.com",
-                Subject: "Send Message For Contact+name",
-                Body: "Body"
-            }).then(
-                message => {
-                    if (message == 'OK') {
-                        console.log('success');
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Thank You For Connecting   And Our Team Will Connect Shortly..!!',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                    } else {
-                        console.log('error');
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Something went wrong..!!',
-                            footer: '<a href="">Serve Error.?</a>'
-                        })
-                    }
-
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "jha708785@gmail.com",
+            Password: "suman1234",
+            To: 'sk7821730@gmail.com',
+            From: "jha708785@gmail.com",
+            Subject: 'Send Message For Connect' + name,
+            Body: "Body"
+        }).then(
+            message => {
+                if (message == 'OK') {
+                    console.log('success');
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Thank You For Connecting   And Our Team Will Connect Shortly..!!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                } else {
+                    console.log('error');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong..!!',
+                        footer: '<a href="">Serve Error.?</a>'
+                    })
                 }
 
-            );
-        }
+            }
+
+        );
     </script>
 </body>
 
