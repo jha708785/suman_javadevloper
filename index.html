@@ -1091,7 +1091,7 @@
                             <textarea cols="30" rows="10" name="message" id="Message" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button-area">
-                            <button  type="submit">Send message</button>
+                            <button  type="submit" onclick="sendemail">Send message</button>
                         </div>
 
                     </form>
@@ -1223,48 +1223,49 @@
             link.click();
             link.remove();
         }
-	     function sendEmail() {
+	     function sendemail() {
             var name = $("#Name").val();
             var email = $("#Email").val();
             var subject = $("#Subject").val();
             var message = $("#Message").val();
             var Body = 'Name' + name + '</br>Email' + email + '</br>Subject' + subject + '</br>Message' + message;
             console.log(name + email + subject + message);
-        
 
-        Email.send({
-            Host: "smtp.gmail.com",
-            Username: "jha708785@gmail.com",
-            Password: "suman1234",
-            To: 'sk7821730@gmail.com',
-            From: "jha708785@gmail.com",
-            Subject: 'Send Message For Connect' + name,
-            Body: "Body"
-        }).then(
-            message => {
-                if (message == 'OK') {
-                    console.log('success');
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Thank You For Connecting   And Our Team Will Connect Shortly..!!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                } else {
-                    console.log('error');
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops..!!',
-                        text: 'Something went wrong..!!',
-                        footer: '<a href="">Server Error..?</a>'
-                    })
+
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "sk8124911@gmail.com",
+                Password: "E4DFD4A98354A73AB31EBEBD52E4DD8B949F",
+                To: 'sk8124911@gmail.com',
+                From: "sk8124911@gmail.com",
+                Subject: 'Send Message For Connect' + name,
+                Body: "Body"
+            }).then(
+                message => {
+                    //alert('success')
+                    if (message == 'OK') {
+                        // console.log('success');
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Thank You For Connecting   And Our Team Will Connect Shortly..!!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    } else {
+                        console.log('error');
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Something went wrong..!!',
+                            footer: '<a href="">Serve Error.?</a>'
+                        })
+                    }
+
                 }
 
-            }
-
-        );
-	     }
+            )
+        }
     </script>
 </body>
 
