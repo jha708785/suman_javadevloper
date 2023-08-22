@@ -1075,7 +1075,7 @@
 
 
                     <div class="text">Message me</div>
-                    <form th:action="javascript:sendEmail()" method="post">
+                    <form action="javascript:sendEmail()" method="post">
                         <div class="fields">
                             <div class="field name">
                                 <input type="text" placeholder="Name" id="Name" name="name" required>
@@ -1091,7 +1091,7 @@
                             <textarea cols="30" rows="10" name="message" id="Message" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button-area">
-                            <button href="tel:+918521954403" type="submit">Send message</button>
+                            <button  type="submit">Send message</button>
                         </div>
 
                     </form>
@@ -1230,7 +1230,7 @@
             var message = $("#Message").val();
             var Body = 'Name' + name + '</br>Email' + email + '</br>Subject' + subject + '</br>Message' + message;
             console.log(name + email + subject + message);
-        }
+        
 
         Email.send({
             Host: "smtp.gmail.com",
@@ -1264,6 +1264,7 @@
             }
 
         );
+	     }
     </script>
 </body>
 
