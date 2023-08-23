@@ -1285,6 +1285,18 @@
         //window.addEventListener('load', function() {
         //    loders.style.display = "none";
         //  })
+
+
+	     window.onoffline = (event) => {
+            console.log("The network connection has been lost.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Network Lost...!!',
+                footer: '<a href="">Network Error.?</a>'
+            })
+        };
+
     </script>
 </body>
 
