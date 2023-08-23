@@ -837,10 +837,23 @@
         .s {
             color: #25D366;
         }
+	     .preloader {
+            background: #000 url(./loader.gif)no-repeat center center;
+            background-size: 25%;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+        }
+        
+        .hide-loader {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
+	 <div id="loader" class="preloader"></div>
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
@@ -1266,6 +1279,13 @@
 
             )
         }
+	      //loder
+        $('#loader').addClass("hide-loader");
+        // let loders = document.getElementById("preloader");
+
+        //window.addEventListener('load', function() {
+        //    loders.style.display = "none";
+        //  })
     </script>
 </body>
 
